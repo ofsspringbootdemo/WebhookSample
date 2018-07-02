@@ -21,6 +21,9 @@ public class BotController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<WebhookResponse> processFulfillment(@RequestBody WebhookRequest request) {
         System.out.println("webhook called!!!!!");
-        return ResponseEntity.ok(new WebhookResponse());
+
+        WebhookResponse response = new WebhookResponse();
+        response.setFulfillmentText("response from onmibot service");
+        return ResponseEntity.ok(response);
     }
 }
