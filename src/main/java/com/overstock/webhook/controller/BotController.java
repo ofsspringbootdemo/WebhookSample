@@ -15,7 +15,7 @@ public class BotController {
 
     @GetMapping
     public String welcomeMessage() {
-        return "Welcome to Omnibot service!!!";
+        return "Welcome to Omnibot service!!! ***updated locally***";
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
