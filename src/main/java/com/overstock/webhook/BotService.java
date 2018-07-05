@@ -26,6 +26,9 @@ public class BotService {
         String drinkType = params.get("drink_type");
         String drinkSize = params.get("drink_size");
         Drink drink = drinkClient.getMyDrink(drinkName, drinkType, drinkSize);
+        if (drink.getOrderId() == null) {
+            return "Fallback Factory Response: Sorry! Error in creating order.";
+        }
         String returnValue = "Thanks for ordering!!! " +
                 "Here is Your order no. " + drink.getOrderId()+ ", cost " + drink.getPrice() + " and delivered in 2 min, " +
                 "Thank you !!!";

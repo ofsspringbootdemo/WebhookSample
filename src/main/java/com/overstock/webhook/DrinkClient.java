@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * Created by Jana on 7/5/2018.
  */
-@FeignClient(name="my-drink-service-client", url="https://my-drink-service.herokuapp.com")
+@FeignClient(name="my-drink-service-client", url="https://my-drink-service.herokuapp.com", fallbackFactory = DrinkClientFallbackFactory.class)
 public interface DrinkClient {
 
     @GetMapping("/drink")
